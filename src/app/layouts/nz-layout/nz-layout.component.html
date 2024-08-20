@@ -1,0 +1,60 @@
+<nz-layout class="app-layout">
+  <nz-sider class="menu-sidebar"
+            nzCollapsible
+            nzWidth="256px"
+            nzBreakpoint="md"
+            [(nzCollapsed)]="isCollapsed"
+            [nzTrigger]="null"
+            nzTheme="dark"
+  >
+    <div class="sidebar-logo">
+      <a routerLink="/">
+        <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
+        <h1>Bandmi Admin panel</h1>
+      </a>
+    </div>
+    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+      <li nz-menu-item nzDisabled nzMatchRouter>
+        <a routerLink="/home/dashboard">
+          <i nz-icon nzType="dashboard"></i>
+          <span>Дашборд</span>
+        </a>
+      </li>
+      <li nzDisabled nz-menu-item nzMatchRouter>
+        <a routerLink="/home/analytics">
+          <i nz-icon nzType="fund-view" nzTheme="outline"></i>
+          <span>Аналитика</span>
+        </a>
+      </li>
+      <li nz-menu-item nzMatchRouter>
+        <a routerLink="/home/booking">
+          <i nz-icon nzType="book" nzTheme="outline"></i>
+          <span>Бронирование</span>
+        </a>
+      </li>
+      <li nz-menu-item nzMatchRouter>
+        <a routerLink="/home/edit">
+          <span nz-icon nzType="edit" nzTheme="outline"></span>
+          <span>Изменение</span>
+        </a>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <div class="app-header">
+  <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+      <span class="trigger"
+            nz-icon
+            [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+      ></span>
+  </span>
+      </div>
+    </nz-header>
+    <nz-content>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+  </nz-layout>
+</nz-layout>

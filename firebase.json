@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "public": "./dist/bandmi-admin-panel/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "site": "bandmi",
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
